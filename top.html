@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<table width="100%">
+<tr>
+    <!-- Logo -->
+    <td width="15%">
+<div class="logo-box">
+    <img src="images/logo.jpg" class="logo" id="dragLogo">
+    <div class="absolute-badge">NEW</div>
+</div>
+    </td>
+
+    <!-- Company name -->
+    <td width="45%">
+        <h2>ShopEase Online Store</h2>
+    </td>
+
+    <!-- Navigation links -->
+    <td width="40%">
+        <a href="index.html" target="_top">Home</a> |
+        <a href="login.html" target="rightFrame">Login</a> |
+        <a href="register.html" target="rightFrame">Register</a> |
+        <a href="catalogue.html" target="rightFrame">Catalogue</a> |
+        <a href="cart.html" target="rightFrame">Cart</a>
+
+
+
+
+    </td>
+</tr>
+</table>
+<script>
+const logo = document.getElementById("dragLogo");
+
+let isDragging = false;
+let offsetX = 0;
+let offsetY = 0;
+
+logo.addEventListener("mousedown", function(e){
+    isDragging = true;
+    offsetX = e.clientX - logo.offsetLeft;
+    offsetY = e.clientY - logo.offsetTop;
+    logo.style.position = "absolute";
+});
+
+document.addEventListener("mousemove", function(e){
+    if(isDragging){
+        logo.style.left = (e.clientX - offsetX) + "px";
+        logo.style.top = (e.clientY - offsetY) + "px";
+    }
+});
+
+document.addEventListener("mouseup", function(){
+    isDragging = false;
+});
+</script>
+<div id="cursorBox">X: 0 , Y: 0</div>
+<script>
+document.addEventListener("mousemove", function(e){
+    let x = e.clientX;
+    let y = e.clientY;
+
+    document.getElementById("cursorBox").innerText = 
+    "X: " + x + " , Y: " + y;
+});
+</script>
+
+</body>
+</html>
+<head>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+<style>
+body{
+    margin:0;
+    padding:0;
+}
+</style>
+
+</head>

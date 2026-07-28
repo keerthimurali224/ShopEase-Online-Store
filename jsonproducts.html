@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>ShopEase JSON Products</title>
+<meta charset="UTF-8">
+</head>
+
+<body>
+
+<h2>ShopEase Product List (Using JSON)</h2>
+
+<div id="products"></div>
+
+<script>
+
+fetch("products.json")
+.then(response => response.json())
+.then(data => {
+
+let output = "";
+
+data.products.forEach(function(product){
+
+output += `
+<div>
+<b>${product.name}</b><br>
+Price: Rs ${product.price}<br>
+Category: ${product.category}
+</div>
+<hr>
+`;
+
+});
+
+document.getElementById("products").innerHTML = output;
+
+});
+
+</script>
+
+</body>
+</html>

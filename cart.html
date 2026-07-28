@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Cart</title>
+<link rel="stylesheet" href="style.css">
+
+<script>
+
+let cart = JSON.parse(sessionStorage.getItem("cart")) || [];
+
+window.onload = function(){
+
+    let box = document.getElementById("cart");
+    let total = 0;
+
+    if(cart.length === 0){
+        box.innerHTML = "<p>Your cart is empty.</p>";
+        return;
+    }
+
+    cart.forEach(p => {
+
+        let cost = p.price * p.quantity;   // FIXED HERE
+        total += cost;
+
+        box.innerHTML += `
+        <p>${p.name} × ${p.quantity} = ₹${cost}</p>
+        `;
+    });
+
+    document.getElementById("total").innerText = total;
+}
+
+</script>
+</head>
+
+<body class="center-page">
+
+<div class="catalogue-container">
+<h2>Your Cart</h2>
+
+<div id="cart"></div>
+
+<h3>Total: ₹<span id="total">0</span></h3>
+
+<button onclick="sessionStorage.clear(); location.reload();"
+style="padding:8px 20px;">Clear Cart</button>
+
+</div>
+
+</body>
+</html>

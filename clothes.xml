@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<clothes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="clothes.xsd">
+
+    <product>
+        <name>T-Shirt</name>
+        <brand>Puma</brand>
+        <price>500</price>
+        <size>M</size>
+    </product>
+
+    <product>
+        <name>Jeans</name>
+        <brand>Levis</brand>
+        <price>1200</price>
+        <size>32</size>
+    </product>
+
+</clothes>

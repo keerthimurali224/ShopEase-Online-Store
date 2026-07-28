@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login - ShopEase</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- External JavaScript file -->
+    <script src="script.js"></script>
+
+    <!-- Login script -->
+    <script>
+    function loginUser() {
+        var username = document.getElementById("username").value;
+        var password = document.getElementById("password").value;
+
+        if (username === "admin" && password === "1234") {
+            sessionStorage.setItem("isloggedIn", "true");
+            alert("Login successful");
+            window.location.href = "catalogue.html";
+        } else {
+            alert("Invalid username or password");
+        }
+    }
+    </script>
+</head>
+<body class="center-page">
+
+    <div class="box">
+        <h2>Welcome to ShopEase 🛒</h2>
+
+        <img src="images/cat shopping.jpg" class="login-gif">
+
+        <p class="tagline">Your one-stop shop for everything you love</p>
+
+        <label>Username</label><br>
+        <input type="text" id="username" placeholder="Enter username"><br><br>
+
+        <label>Password</label><br>
+        <input type="password" id="password" placeholder="Enter password"><br><br>
+
+        <button onclick="loginUser()">Login</button>
+
+        <p class="note">New user? Please register to continue</p>
+    </div>
+
+</body>
+</html>

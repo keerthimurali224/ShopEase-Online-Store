@@ -1,0 +1,21 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+<xs:element name="PRODUCTS">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element name="ITEM" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="product_name" type="xs:string"/>
+            <xs:element name="Category" type="xs:string"/>
+            <xs:element name="Price" type="xs:integer"/>
+            <xs:element name="Brand" type="xs:string"/>
+            <xs:element name="Stock" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
+
+</xs:schema>

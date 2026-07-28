@@ -1,0 +1,29 @@
+{
+  "products":[
+    {
+      "name":"T-Shirt",
+      "price":500,
+      "category":"Clothes"
+    },
+    {
+      "name":"Jeans",
+      "price":1200,
+      "category":"Clothes"
+    },
+    {
+      "name":"Mobile",
+      "price":15000,
+      "category":"Electronics"
+    },
+    {
+      "name":"Laptop",
+      "price":55000,
+      "category":"Electronics"
+    },
+    {
+      "name":"Perfume",
+      "price":1500,
+      "category":"Beauty"
+    }
+  ]
+}

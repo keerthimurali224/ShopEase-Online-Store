@@ -1,0 +1,233 @@
+/* ===== Global Page Background ===== */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-image: url("images/bg.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+/* ===== Centering wrapper (only where needed) ===== */
+.center-page {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ===== Login & Catalogue Box ===== */
+.box {
+    background: rgba(255,255,255,0.9);
+    padding: 30px 40px;
+    border-radius: 14px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    text-align: center;
+    width: 380px;
+}
+
+/* ===== Inputs ===== */
+input {
+    padding: 8px;
+    width: 90%;
+    margin: 8px 0;
+}
+
+/* ===== Buttons ===== */
+button {
+    padding: 8px 14px;
+    margin: 6px;
+    border-radius: 6px;
+    border: none;
+    background: #4facfe;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #2f80ed;
+}
+
+/* ===== Catalogue ===== */
+.catalogue-container{
+    background: rgba(255,255,255,0.92);
+    padding: 30px;
+    border-radius: 16px;
+    width: 70%;
+    text-align: center;
+}
+
+.categories button{
+    padding: 12px 25px;
+    margin: 8px;
+    border-radius: 25px;
+    border: none;
+    background: linear-gradient(135deg,#36d1dc,#5b86e5);
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.product{
+    background:#f4f9ff;
+    margin:10px auto;
+    padding:12px;
+    border-radius:10px;
+    width:60%;
+}
+
+.qty-box button{
+    padding:5px 10px;
+    margin:5px;
+}
+
+.add-btn{
+    padding:8px 18px;
+    background:#4facfe;
+    border:none;
+    color:white;
+    border-radius:20px;
+    cursor:pointer;
+}
+
+.product-img{
+    width:120px;
+    height:120px;
+    object-fit:contain;
+    display:block;
+    margin:5px auto;
+}
+
+/* ================================================= */
+/* =============== EXPERIMENT 3 =================== */
+/* ================================================= */
+
+/* ----- Cursor types ----- */
+.cursor-pointer{ cursor:pointer; }
+.cursor-move{ cursor:move; }
+.cursor-text{ cursor:text; }
+.cursor-wait{ cursor:wait; }
+
+/* ----- Relative & absolute demo ----- */
+.relative-box{
+  position: relative;
+  width: 300px;
+  height: 150px;
+  background:#cce7ff;
+  margin: 20px auto;
+  border-radius:10px;
+  padding:10px;
+}
+
+.absolute-box{
+  position: absolute;
+  bottom:10px;
+  right:10px;
+  background:#ff7675;
+  color:white;
+  padding:8px;
+  border-radius:6px;
+}
+
+/* ----- Fixed demo ----- */
+.fixed-cart{
+  position: fixed;
+  bottom:20px;
+  right:20px;
+  background:#4facfe;
+  padding:14px;
+  border-radius:50%;
+  font-size:22px;
+  z-index:1000;
+}
+
+/* ----- Overlapping demo ----- */
+.overlap-area{
+  position: relative;
+  height:140px;
+  margin-top:20px;
+}
+
+.box1{
+  position:absolute;
+  left:80px;
+  top:20px;
+  background:#74b9ff;
+  width:120px;
+  height:80px;
+  z-index:1;
+}
+
+.box2{
+  position:absolute;
+  left:120px;
+  top:50px;
+  background:#fd79a8;
+  width:120px;
+  height:80px;
+  z-index:2;
+}
+
+/* ===== DRAG LOGO (FINAL SIZE) ===== */
+#dragLogo{
+    cursor: move;
+    width: 200px;   /* medium, clean size */
+    height: auto;
+}
+
+/* ===== Cursor position box ===== */
+#cursorBox{
+    position: fixed;
+    bottom: 10px;
+    right: 15px;
+    background: black;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: 14px;
+    z-index: 9999;
+}
+
+/* ===== Position badge demo ===== */
+.relative-tag {
+    position: relative;
+    left: 25px;
+    top: 8px;
+    background: orange;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 12px;
+    display: inline-block;
+}
+
+.logo-box {
+    position: relative;
+    display: inline-block;
+}
+
+.absolute-badge {
+    position: absolute;
+    top: -6px;
+    right: -6px;
+    background: red;
+    color: white;
+    font-size: 10px;
+    padding: 3px 6px;
+    border-radius: 50%;
+}
+
+.sticky-bar {
+    position: sticky;
+    top: 0;
+    background: #0984e3;
+    color: white;
+    padding: 6px;
+    text-align: center;
+    z-index: 500;
+}
+
+/* ===== HIDE EXP 3 VISUAL ELEMENTS (keep logic) ===== */
+.relative-tag,
+.sticky-bar {
+    display: none;
+}

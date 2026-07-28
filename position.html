@@ -1,0 +1,11 @@
+<div id="cursorBox">X: 0 , Y: 0</div>
+
+<script>
+document.addEventListener("mousemove", function(e){
+    let x = e.clientX;
+    let y = e.clientY;
+
+    document.getElementById("cursorBox").innerText =
+    "X: " + x + " , Y: " + y;
+});
+</script>

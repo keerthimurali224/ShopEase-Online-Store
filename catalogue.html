@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Catalogue - ShopEase</title>
+<link rel="stylesheet" href="style.css">
+
+<script>
+
+/* ---------- LOGIN CHECK ---------- */
+if (sessionStorage.getItem("isloggedIn") !== "true") {
+    alert("Please login first");
+    window.location.href = "login.html";
+}
+
+/* ---------- PRODUCTS ---------- */
+let products = {
+
+clothes: [
+ {name:"T-Shirt", price:500},
+ {name:"Jeans", price:1200},
+ {name:"Jacket", price:2200},
+ {name:"Kurti", price:900}
+],
+
+electronics: [
+ {name:"Mobile", price:15000},
+ {name:"Laptop", price:55000},
+ {name:"Headphones", price:2000},
+ {name:"Smart Watch", price:3500}
+],
+
+books: [
+ {name:"Novel", price:400},
+ {name:"Python Book", price:650},
+ {name:"AI Book", price:900}
+],
+
+home: [
+ {name:"Mixer", price:2500},
+ {name:"Iron Box", price:1200},
+ {name:"Lamp", price:600}
+],
+
+footwear: [
+ {name:"Sports Shoes", price:2200},
+ {name:"Sandals", price:900}
+],
+
+beauty: [
+ {name:"Face Wash", price:250},
+ {name:"Perfume", price:1500}
+],
+
+sports: [
+ {name:"Cricket Bat", price:2000},
+ {name:"Football", price:800}
+],
+
+groceries: [
+ {name:"Rice Bag", price:1200},
+ {name:"Cooking Oil", price:650}
+]
+
+};
+
+/* ---------- CART STORAGE ---------- */
+let cart = JSON.parse(sessionStorage.getItem("cart")) || [];
+
+
+/* ---------- LOAD CATEGORY ---------- */
+function loadCategory(cat){
+
+    let box = document.getElementById("products");
+    box.innerHTML = "";
+
+    let table = `
+    <h3 style="text-align:center; text-transform:capitalize;">
+    ${cat} - Basic Information
+    </h3>
+
+    <table border="3" width="85%" align="center" cellpadding="10"
+    style="border-collapse:separate; border-spacing:0; border:3px double black; margin-bottom:30px;">
+
+    <tr style="background-color:#d79aa4;">
+        <th style="border:2px solid black;">Product Name</th>
+        <th style="border:2px solid black;">Price (₹)</th>
+        <th style="border:2px solid black;">Quantity</th>
+    </tr>
+    `;
+
+    products[cat].forEach(p => {
+        table += `
+        <tr>
+            <td style="border:2px solid black;">${p.name}</td>
+            <td style="border:2px solid black;">${p.price}</td>
+            <td style="border:2px solid black;">
+                <button onclick="changeQty('${p.name}',-1)">-</button>
+                <span id="${p.name}">1</span>
+                <button onclick="changeQty('${p.name}',1)">+</button>
+                <br><br>
+                <button onclick="addToCart('${p.name}',${p.price})"
+                style="background:#4CAF50;color:white;border:none;padding:5px 10px;">
+                Add
+                </button>
+            </td>
+        </tr>
+        `;
+    });
+
+    table += `</table>`;
+
+
+    /* ----------- DETAILED TABLE ----------- */
+
+    table += `
+    <h3 style="text-align:center; text-transform:capitalize;">
+    ${cat} - Detailed Information
+    </h3>
+
+    <table width="85%" align="center" cellpadding="10"
+    style="border-collapse:collapse; margin-bottom:30px;">
+
+    <tr style="background-color:#2f4f7f; color:white;">
+        <th>Product Name</th>
+        <th>Category</th>
+        <th>Availability</th>
+        <th>Rating</th>
+    </tr>
+    `;
+
+    products[cat].forEach(p => {
+        table += `
+        <tr style="background-color:#e8edf7;">
+            <td>${p.name}</td>
+            <td>${cat}</td>
+            <td>In Stock</td>
+            <td>4.5 ⭐</td>
+        </tr>
+        `;
+    });
+
+    table += `</table>`;
+
+
+    /* ----------- GO TO CART BUTTON ----------- */
+
+    table += `
+    <div style="text-align:center; margin-bottom:40px;">
+        <button onclick="window.location.href='cart.html'"
+        style="padding:10px 25px; background-color:#4CAF50;
+        color:white; border:none; border-radius:6px; cursor:pointer;">
+        Go To Cart
+        </button>
+    </div>
+    `;
+
+    box.innerHTML = table;
+}
+
+
+/* ---------- CHANGE QUANTITY ---------- */
+function changeQty(name,val){
+    let el = document.getElementById(name);
+    let q = parseInt(el.innerText) + val;
+    if(q < 1) q = 1;
+    el.innerText = q;
+}
+
+
+/* ---------- ADD TO CART ---------- */
+function addToCart(name, price){
+
+    let qty = parseInt(document.getElementById(name).innerText);
+
+    cart.push({
+        name: name,
+        price: price,
+        quantity: qty
+    });
+
+    sessionStorage.setItem("cart", JSON.stringify(cart));
+
+    alert("Added to cart");
+}
+
+</script>
+</head>
+
+<body class="center-page">
+
+<div class="catalogue-container">
+    <h2>Product Catalogue</h2>
+
+    <div class="categories">
+        <button onclick="loadCategory('clothes')">Clothes</button>
+        <button onclick="loadCategory('electronics')">Electronics</button>
+        <button onclick="loadCategory('books')">Books</button>
+        <button onclick="loadCategory('home')">Home</button>
+        <button onclick="loadCategory('footwear')">Footwear</button>
+        <button onclick="loadCategory('beauty')">Beauty</button>
+        <button onclick="loadCategory('sports')">Sports</button>
+        <button onclick="loadCategory('groceries')">Groceries</button>
+    </div>
+
+    <div id="products"></div>
+
+</div>
+
+</body>
+</html>

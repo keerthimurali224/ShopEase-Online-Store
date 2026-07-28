@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="style.css">
+<script>
+document.addEventListener("mousemove", function(e){
+    document.getElementById("cursorBox").innerText =
+        "X: " + e.clientX + " , Y: " + e.clientY;
+});
+</script>
+<style>
+body{
+    margin:0;
+    padding:0;
+}
+</style>
+
+
+</head>
+<body>
+    <div class="sticky-bar">
+    Sticky Offer Bar – CSS Position Demo
+</div>
+
+<h2>Welcome to ShopEase</h2>
+<p>
+ShopEase is a simple online shopping website where users can browse products and add items to cart.
+</p>
+<p><b>HAPPY SHOPPING!!!</b></p>
+<p>
+Welcome to <span class="highlight">ShopEase</span> Online Store.
+<div class="relative-tag">
+    CSS Relative Position Demo
+</div>
+
+</p>
+<div id="cursorBox">X: 0 , Y: 0</div>
+<script>
+document.addEventListener("mousemove", function(e){
+    let x = e.clientX;
+    let y = e.clientY;
+    document.getElementById("cursorBox").innerText =
+    "X: " + x + " , Y: " + y;
+});
+</script>
+</body>
+</html>
+<div id="cursorBox" style="
+position: fixed;
+right: 15px;
+bottom: 15px;
+background: black;
+color: white;
+padding: 6px 10px;
+border-radius: 8px;
+font-size: 12px;
+z-index: 999;">
+X: 0 , Y: 0
+</div>
+

@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="style.xsl"?>
+
+<PRODUCTS>
+
+<ITEM>
+<product_name>T-Shirt</product_name>
+<Category>Clothes</Category>
+<Price>799</Price>
+<Brand>Puma</Brand>
+<Availability>In Stock</Availability>
+</ITEM>
+
+<ITEM>
+<product_name>Laptop</product_name>
+<Category>Electronics</Category>
+<Price>55000</Price>
+<Brand>HP</Brand>
+<Availability>Limited</Availability>
+</ITEM>
+
+<ITEM>
+<product_name>Novel</product_name>
+<Category>Books</Category>
+<Price>499</Price>
+<Brand>Penguin</Brand>
+<Availability>In Stock</Availability>
+</ITEM>
+
+<ITEM>
+<product_name>Shoes</product_name>
+<Category>Footwear</Category>
+<Price>2999</Price>
+<Brand>Nike</Brand>
+<Availability>Out of Stock</Availability>
+</ITEM>
+
+</PRODUCTS>
